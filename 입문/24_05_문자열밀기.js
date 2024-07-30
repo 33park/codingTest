@@ -19,7 +19,10 @@
 
 /**
  * 첫번째 참고한 코드
- * function solution(A, B) {
+ * 
+*/
+
+function solution(A, B) {
     let arr = [...A]
     for(let i = 0; i< arr.length; i++){
         // 왜 arr의 길이만큼 반복해서 arr.join과 B를 비교하는지 알 수 없음
@@ -27,13 +30,19 @@
             return i;
         else{
             arr.unshift(arr.pop())
+            console.log(arr)
             if(arr.join('') === B)
                 return i+1;
         }
     }
     return -1;
 }
-*/
+
+solution("hello","ohell")
+solution("apple","elppa")
+solution("atat","tata")
+solution("abc","abc")
+
 
 /**
  * 복사본 생성 (바꾼 문자열을 반환할거니까)
