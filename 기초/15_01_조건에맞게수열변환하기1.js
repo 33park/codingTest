@@ -11,6 +11,7 @@ function solution(arr){
 }
 solution([1, 2, 3, 100, 99, 98]);
 
+//res에 push하면서 불필요한 계산 발생.
 // function solution01(arr) {
 
 //     let res = [];
