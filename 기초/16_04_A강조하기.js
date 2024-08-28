@@ -1,21 +1,19 @@
-function solution(strArr) {
-	for (let i = 0; i < strArr.length; i++) {
-		if (i % 2 === 0) {
-			strArr[i] = strArr[i].toLowerCase();
-		}
-		if (i % 2 != 0) {
-			strArr[i] = strArr[i].toUpperCase();
-		}
-	}
+//나의 풀이
 
-	return strArr;
+function solution(myString) {
+    let str = [...myString]
+    for(let i = 0; i < myString.length; i++){ // 문자가 길어질수록 성능저하
+        if(str[i] != "A"){
+            str[i] = str[i].toLowerCase();
+        }
+        if(str[i] === "a") {
+            str[i] = str[i].toUpperCase();
+        }
+    }
+
+    return str.join('') // 배열변환과 join 연산 추가로 수행하여 코드 복잡도가 높다
 }
 
-solution(["AAA", "BBB", "CCC", "DDD"]);
-solution(["aBc", "AbC"]);
 
-//다른 사람의 풀이
-
-const solution02 = (strArr) => {
-	return strArr.map((v, i) => (i % 2 === 0 ? v.toLowerCase() : v.toUpperCase));
-};
+//다른 사람 풀이 (적합)
+const solution=s=>s.toLowerCase().replaceAll('a','A');
