@@ -1,23 +1,24 @@
-/**
- * count 증가
- * pat 길이만큼 끊어서 검색
- * slice 쓰기
- */
-function solution02(myString, pat) {
-	const reg = new RegExp(`(?=${pat})`, "g"); // `?=` 앞쪽일치, "g"는 정규식의 플래그, 전역
-	return myString.match(reg)?.length || 0;
+function solution(strArr) {
+    strArr = strArr.filter((x)=>{
+        // console.log(x.indexOf("ad"))
+        return x.indexOf("ad") == -1 //일치하는 값이 없으면 -1을 반환합니다.
+    })
+
+    return strArr;
 }
 
-function solution01(myString, pat) {
-	let count = 0;
+solution(["and","notad","abcd"])
 
-	for (let i = 0; i < myString.length; i++) {
-		let [start, end] = [i, i + pat.length];
-		let str = myString.slice(start, end);
-		if (str == pat) count++;
-	}
+function solution01(strArr) {
+    let res = [];
 
-	return count;
+    strArr.forEach((ele)=>{
+        let condition = ele.includes('ad');
+        if(!condition){
+            res.push(ele)
+        }
+    })
+
+    return res
 }
 
-solution("banana", "ana");
