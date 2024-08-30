@@ -4,8 +4,8 @@
  * slice 쓰기
  */
 function solution02(myString, pat) {
-    const reg = new RegExp(`(?=${pat})`, "g") // `?=` 앞쪽일치, "g"는 정규식의 플래그, 전역 
-    return myString.match(reg)?.length || 0;
+	const reg = new RegExp(`(?=${pat})`, "g"); // `?=` 앞쪽일치, "g"는 정규식의 플래그, 전역
+	return myString.match(reg)?.length || 0;
 }
 
 function solution01(myString, pat) {
