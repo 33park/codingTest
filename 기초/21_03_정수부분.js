@@ -1,4 +1,3 @@
 function solution(flo) {
-    var answer = 0;
-    return answer;
+    return Math.floor(flo);
 }
