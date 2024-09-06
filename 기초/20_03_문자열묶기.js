@@ -10,10 +10,12 @@ function solution(strArr) {
         mappingTable[len] = (mappingTable[len] || 0) + 1;
     });
 
+    console.log(mappingTable)
+
     // 그룹 중 가장 큰 크기를 반환
     return Math.max(...Object.values(mappingTable));
 }
-
+solution(["a", "bc", "d", "efg", "jkl", "mno",  "qrstu", "hi"]);
 
 /**
  * 요소 갯수 순으로 정렬
@@ -35,4 +37,4 @@ function solution(strArr) {
     return Math.max(...Object.values(mappingTable))
 }
 
-solution(["a", "bc", "d", "efg", "jkl", "mno",  "qrstu", "hi"]);
+
