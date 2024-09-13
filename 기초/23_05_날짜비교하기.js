@@ -1,18 +1,9 @@
-function solution(a, b) {
-	//모두 홀수 X
-	if (a % 2 == 0 && b % 2 == 0) {
-		return Math.abs(a - b);
-	}
-
-	//하나만 홀수
-	if (a % 2 == 0 || b % 2 == 0) {
-		return 2 * (a + b);
-	}
-
-	//모두 홀수
-	if (a % 2 != 0 && b % 2 != 0) {
-		return Math.pow(a, 2) + Math.pow(b, 2);
-	}
+function solution(date1, date2) {
+    let [a,b] = [date1.join(''),date2.join('')];
+    return Number(a) < Number(b) ? 1 : 0
 }
 
-solution(3, 5);
+/**
+ * 참고...
+ * new Date(date1) < new Date(date2) ? 1 : 01
+*/
