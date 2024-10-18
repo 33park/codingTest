@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css" />
+		<link rel="stylesheet" href="man.css" />
+	</head>
+	<body>
+		<div class="screen-wrapper">
+			<div class="box">
+				<div class="man">
+					<div class="back-hair p-l-center"></div>
+					<div class="body p-l-center">
+						<div class="chest">
+							<div class="left">
+                                <div class="arm"></div>
+                            </div>
+							<div class="right">
+                                <div class="arm"></div>
+                            </div>
+						</div>
+					</div>
+					<div class="head p-l-center">
+						<div class="face">
+                            <div class="eye p-l-center"></div>
+							<div class="eye-brow p-l-center"></div>
+							<div class="mouse p-l-center"></div>
+						</div>
+						<div class="front-hair p-l-center"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				// 무지개 색 배열
+				const rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+				$(".screen-wrapper .box div").each(function (index) {
+					// 순서대로 무지개 색을 적용
+					$(this).css("background-color", rainbowColors[index % rainbowColors.length]);
+				});
+			});
+		</script>
+	</body>
+</html>

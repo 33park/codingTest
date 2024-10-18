@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+html,body {
+    background-color: grey;
+}
+
+.p-rel {
+    position: relative;
+}
+
+.p-abs {
+    position: absolute;
+}
+
+.p-l-center{
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.p-b {
+    width: 100%;
+    bottom: 0;
+}
+
+.p-b-center {
+    bottom: 50%;
+    transform: translateY(-50%);
+}
+
+
+.stick-regular {
+    font-family: "Stick", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .dotgothic16-regular {
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+.screen-wrapper {
+    display: block;
+    width: 720px;
+    height: 360px;
+    margin: 0 auto;
+    background-color: green;
+}
+
+.box {
+    position: relative;
+    display: block;
+    width: inherit;
+    height: inherit;
+    animation: slide 1s infinite;
+    transform-origin: center bottom;
+}
+
+.man {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+}
+
+.man div {
+    position: absolute;
+    transition: all 0s ease;
+    transform-origin: bottom center;
+    animation-duration: .3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.head {
+    width: 220px;
+    height: 220px;
+}
+
+.front-hair {
+    width: 240px;
+    height: 120px;
+}
+
+.face {
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+}
+
+.back-hair {
+    width: 260px;
+    height: 260px;
+}
+
+.body {
+    width: 120px;
+    height: 120px;
+    bottom: 0;
+}
+
+.eye {
+    width: 80%;
+    height: 50%;
+    bottom: 10%;
+}
+
+.eye-brow {
+    width: 80%;
+    height: 10%;
+    bottom: 40%;
+}
+
+.mouse {
+    width: 40px;
+    height: 40px;
+    bottom: 0;
+}
+
+.chest {
+    width: 100%;
+    height: 60px;
+}
+.arm {
+    width: 200px;
+    height: 50px;
+}
+
+.left {
+    left: 0;
+    top: 0;
+}
+
+.left .arm {
+    transform-origin: center bottom;
+    transform: translate(-10%,-10%) rotate(90deg);
+}
+
+.right {
+    right: 0;
+    top: 0;
+}
+
+.right .arm{
+    transform-origin: center bottom;
+    transform: translate(-10%,-10%) rotate(90deg);
+}
+
+@keyframes pop01{
+    0% {
+        left: 50%;
+        transform: translate(-50%, 10%) scaleY(0.8);
+    }
+    100%  {
+        left: 50%;
+        transform: translate(-50%, -10%) scaleY(1);
+    }
+}
+
+@keyframes pop02{
+    0% {
+        left: 50%;
+        transform: translate(-50%, 10%) scaleY(0.9);
+    }
+    100%  {
+        left: 50%;
+        transform: translate(-50%, -10%) scaleY(1);
+    }
+}
+
+@keyframes pop03{
+    0% {
+        left: 50%;
+        transform: translate(-50%, 0%) scaleY(0.9);
+    }
+    100%  {
+        left: 50%;
+        transform: translate(-50%, 0%) scaleY(1);
+    }
+}
+
+
+.man .back-hair,
+.man .head {
+    animation-name: pop01;
+}
+
+.man .body,
+.man .face {
+    animation-name: pop03;
+}
+
+.face > div {
+    animation-name: pop02;
+}
+
+@keyframes slide {
+    0%{
+        transform: translate3d(0,0,0) scale(1);
+    }
+    33%{
+        transform: translate3d(2%,0,0) scale(0.95);
+    }
+    66%{
+        transform: translate3d(-2%,0,0) scale(1.05);
+    }
+    100% {
+        transform: translate3d(0,0,0) scale(1);
+    }
+}
+
