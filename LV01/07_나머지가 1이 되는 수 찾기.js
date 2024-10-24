@@ -1,8 +1,8 @@
 function solution(n) {
-	let other = 1;
-	while (n == 1) {}
+    for (let x = 2; x <= Math.sqrt(n); x++) {  
+        if (n % x === 1) {
+            return x;
+        }
+    }
+    return n - 1;  
 }
-
-console.log(solution(10));
-console.log(solution(11));
-console.log(solution(12));
